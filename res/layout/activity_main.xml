@@ -1,0 +1,169 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:id="@+id/TableLayout01"
+    android:stretchColumns="1">
+    
+    <!-- Fila 1: Las etiquetas de texto van en la fila 0,
+    	El campo de texto se sitúan en el segundo lugar 
+    	y permite espacio para otras 2 columnas. Por tanto un
+    	total de 4 columnas existirán en esta fila -->
+    	<TableRow>
+    	    <TextView
+    	        android:id="@+id/tvlbl1"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_column="0"
+    	        android:text="@string/txtlbl1" />
+    	    <EditText
+    	        android:id="@+id/txtCoste"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:inputType="numberDecimal"
+    	        android:layout_column="2"
+    	        android:layout_span="2" />
+    	</TableRow>
+    	
+    	<!-- Lo mismo que en el anterior -->
+    	<TableRow>
+    	    <TextView
+    	        android:id="@+id/tvlbl2"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:layout_column="0"
+    	        android:layout_span="0"
+    	        android:text="@string/txtlbl2"/>
+    	    <EditText 
+    	        android:id="@+id/txtPersonas"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:inputType="numberDecimal"
+    	        android:layout_column="2"
+    	        android:layout_span="2"/>
+    	</TableRow>
+    	
+    	<!-- Esta fila solo tiene una etiqueta en la columna 0 -->
+    	<TableRow>
+    	    <TextView
+    	        android:id="@+id/tvlbl3"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:text="@string/txtlbl3"/>
+    	</TableRow>
+    	
+    	<!-- En esta fila se introduce un RadoiGroup
+    		para los RadioButton en la columna 0 y añadiendo
+    		3 columnas con android:layout_span, y crearemos
+    		un RadioButton en cada una de ellas. La última celda, la 4
+    		tendrá un campo de texto para introducir un porcentaje que queramos -->
+    	<TableRow>
+    		<RadioGroup
+    		    android:id="@+id/RadioGroupTips"
+    		    android:orientation="horizontal"
+    		    android:layout_height="wrap_content"
+    		    android:layout_width="wrap_content"
+    		    android:layout_column="0"
+    		    android:layout_span="3"
+    		    android:checkedButton="@+id/radioFifteen">
+    		    <RadioButton
+    		        android:id="@+id/radioFifteen"
+    		        android:layout_width="wrap_content"
+    		        android:layout_height="wrap_content"
+    		        android:text="@string/rdoTxt15" />
+    		    <RadioButton
+    		        android:id="@+id/radioTwenty"
+    		        android:layout_width="wrap_content"
+    		        android:layout_height="wrap_content"
+    		        android:text="@string/rdoTxt20"/>
+    		    <RadioButton
+    		        android:id="@+id/radioOther"
+    		        android:layout_height="wrap_content"
+    		        android:layout_width="wrap_content"
+    		        android:text="@string/rdoTxtOther" />
+    		</RadioGroup>
+    		<EditText
+    		    android:id="@+id/txtPropina"
+    		    android:layout_height="wrap_content"
+    		    android:layout_width="fill_parent"
+    		    android:inputType="numberDecimal"/>		    
+    	</TableRow>
+    	
+    	<!-- La siguiente fila es para los botones. El botón de calcular
+    		irá en la columna 3, y reset en la columna 4 -->
+    	<TableRow>
+    		<Button 
+    		    android:id="@+id/btnCalcular"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_column="2"
+    			android:text="@string/btnCalcular"/>
+    		<Button
+    		    android:id="@+id/btnReset"
+    		    android:layout_height="wrap_content"
+    		    android:layout_width="wrap_content"
+    		    android:layout_column="3"
+    		    android:text="@string/btnReset"/>
+  		</TableRow>
+  		
+    	<!-- Los TableLayout permiten a otros Views ser insertados
+    		entre elementos TableRow. Por lo que introduciremos una View
+    		para crear una linea que separe la parte superior de la inferior.-->
+    	<View 
+    	    android:layout_height="2dp"
+    	    android:layout_marginTop="5dip"
+    	    android:layout_marginBottom="5dip"
+    	    android:background="#DDFFDD"/>
+    	
+    	<!-- De nuevo ponemos TableRow para que pongamos
+    		el resultado del calculo. Pondremos las etiquetas con 
+    		texto en la columna 0 y los resultados en la columna 2 -->
+    	<TableRow
+    	    android:paddingBottom="10dip"
+    	    android:paddingTop="5dip">
+    	    <TextView 
+    	        android:id="@+id/txlbl4"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:layout_column="0"
+    	        android:text="@string/txtlbl4"/>
+    	    <TextView
+    	        android:id="@+id/txtTotal"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:layout_column="2"
+    	        android:layout_span="2"/>
+    	</TableRow>
+    	<TableRow
+    	    android:paddingBottom="10dip"
+    	    android:paddingTop="5dip">
+    	    <TextView
+    	        android:id="@+id/txtlbl5"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:layout_column="0"
+    	        android:text="@string/txtlbl5"/>
+    	    <TextView
+    	        android:id="@+id/txtPorc"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:layout_column="2"
+    	        android:layout_span="2"/>
+    	</TableRow>
+    	<TableRow
+    	    android:paddingBottom="10dip"
+    	    android:paddingTop="5dip">
+    	    <TextView
+    	        android:id="@+id/txtlbl6"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:layout_column="0"
+    	        android:text="@string/txtlbl6"/>
+    	    <TextView
+    	        android:id="@+id/txtPersona"
+    	        android:layout_height="wrap_content"
+    	        android:layout_width="wrap_content"
+    	        android:layout_column="2"
+    	        android:layout_span="2"/>
+    	</TableRow>
+</TableLayout>

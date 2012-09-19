@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">Tipster</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="txtlbl1">Coste Total:</string>
+    <string name="txtlbl2">Nº de Personas</string>
+    <string name="txtlbl3">% Propina</string>
+    <string name="rdoTxt15">15%</string>
+    <string name="rdoTxt20">20%</string>
+    <string name="rdoTxtOther">Otro:</string>
+    <string name="btnCalcular">Calcular</string>
+    <string name="btnReset">Reset</string>
+    <string name="txtlbl4">Coste Propina</string>
+    <string name="txtlbl5">Pago Total</string>
+    <string name="txtlbl6">Por persona</string>
+
+</resources>
